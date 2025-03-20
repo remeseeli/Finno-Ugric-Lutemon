@@ -10,7 +10,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     // LETS F---ING GO GUYS (CENSORED DUE TO INAPPROPRIATE CONTENT)
-    // Testing comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
