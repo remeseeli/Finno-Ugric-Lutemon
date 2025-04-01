@@ -13,4 +13,5 @@ public abstract class Lutemon {
     public int maxHealth;
     public int id;
     private int idCounter;
+
 }
