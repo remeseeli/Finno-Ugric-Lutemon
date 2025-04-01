@@ -6,6 +6,7 @@ public abstract class Lutemon {
     public int attack; // Stats for the lutemon
     public int defense;
     public int testosterone; // Custom stat of our own, will probably be health regeneration?
+    public int experience;
     public int level;
     // health represents the CURRENT health.
     public int health;
