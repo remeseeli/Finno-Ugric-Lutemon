@@ -5,7 +5,5 @@ public class Home {
     public Lutemon createLutemon(Lutemon lutemon){
 
         System.out.println("Name the lutemon");
-        String lutemonName =;
-
     }
 }
