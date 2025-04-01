@@ -16,4 +16,7 @@ public abstract class Lutemon {
     public Lutemon() {
         // CONSTRUCTOR
     }
+    /* MORE METHODS
+    HERE
+    LOL */
 }
