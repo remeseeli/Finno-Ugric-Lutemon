@@ -45,14 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
                 testEnemy.health = testEnemy.health - testGuy.attack;
                 if(testEnemy.health <= 0) {
-                    System.out.println(testEnemy.getName() + "died. Battle won.");
+                    System.out.println(testEnemy.getName() + " died. Battle won.");
                     break;
                 }
                 System.out.println(testEnemy.getName() + "is hit, has " + testGuy.health + "HP left.");
-
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
+    } // end of function
 }
