@@ -1,4 +1,4 @@
 package com.palinka.finno_ugric_lutemon;
 
-public class Black {
+public class Black extends Lutemon{
 }

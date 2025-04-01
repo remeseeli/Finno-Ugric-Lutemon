@@ -24,4 +24,8 @@ public class MainActivity extends AppCompatActivity {
         });
         testButton = findViewById(R.id.eeliButton);
     }
+    // function for eeli testing
+    public void testing() {
+        System.out.println();
+    }
 }
