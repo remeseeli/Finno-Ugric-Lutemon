@@ -1,8 +1,8 @@
 package com.palinka.finno_ugric_lutemon;
 
 public class Chromatic extends Lutemon {
-    public Chromatic(String name, String color, int attack, int defense, int testosterone, int experience, int level, int health, int maxHealth, int id) {
-        super(name, color, attack, defense, testosterone, experience, level, health, maxHealth, id);
+    public Chromatic() {
+        super("defaultName", "Chromatic", 10, 10, 10, 10, 10, 10, 10, 10);
 
     }
 }
