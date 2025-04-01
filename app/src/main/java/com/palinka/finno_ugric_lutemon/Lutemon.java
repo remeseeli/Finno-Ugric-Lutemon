@@ -27,7 +27,26 @@ public abstract class Lutemon {
         this.maxHealth = maxHealth;
         this.id = id;
     }
-    /* MORE METHODS
-    HERE
-    LOL */
+    //Getter methods for each variable
+    public String getName() {return name;}
+    public String getColor() {return color;}
+    public int getAttack() {return attack;}
+    public int getDefense() {return defense;}
+    public int getTestosterone() {return testosterone;}
+    public int getExperience() {return experience;}
+    public int getLevel() {return level;}
+    public int getHealth() {return health;}
+    public int getMaxHealth() {return maxHealth;}
+    public int getId() { return id; }
+    //Setter methods for each variable
+    public void setName(String name) {this.name = name;}
+    public void setColor(String color) {this.color = color;} //May be deleted if unused
+    public void setAttack(int attack) {this.attack = attack;}
+    public void setDefense(int defense) {this.defense = defense;}
+    public void setTestosterone(int testosterone) {this.testosterone = testosterone;}
+    public void setExperience(int experience) {this.experience = experience;}
+    public void setLevel(int level) {this.level = level;}
+    public void setHealth(int health) {this.health = health;}
+    public void setMaxHealth(int maxHealth) {this.maxHealth = maxHealth;}
+
 }
