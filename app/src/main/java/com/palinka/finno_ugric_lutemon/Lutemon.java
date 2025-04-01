@@ -48,5 +48,4 @@ public abstract class Lutemon {
     public void setLevel(int level) {this.level = level;}
     public void setHealth(int health) {this.health = health;}
     public void setMaxHealth(int maxHealth) {this.maxHealth = maxHealth;}
-
 }
