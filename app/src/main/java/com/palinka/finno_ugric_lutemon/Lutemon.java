@@ -14,8 +14,18 @@ public abstract class Lutemon {
     public int maxHealth;
     public int id;
     private int idCounter;
-    public Lutemon() {
+    public Lutemon(String name, String color, int attack, int defense, int testosterone, int experience, int level, int health, int maxHealth, int id) {
         // CONSTRUCTOR
+        this.name = name;
+        this.color = color;
+        this.attack = attack;
+        this.defense = defense;
+        this.testosterone = testosterone;
+        this.experience = experience;
+        this.level = level;
+        this.health = health;
+        this.maxHealth = maxHealth;
+        this.id = id;
     }
     /* MORE METHODS
     HERE

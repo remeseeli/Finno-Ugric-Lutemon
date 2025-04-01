@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         testButton = findViewById(R.id.eeliButton);
     }
     // function for eeli testing
-    public void testing() {
+    public void eeliTesting() {
         System.out.println();
     }
 }
