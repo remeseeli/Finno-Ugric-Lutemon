@@ -19,4 +19,5 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
     <!-- Added suppress warning for HardcodedText -->
+    <!-- This is how you do comments on XML by the way -->
 </androidx.constraintlayout.widget.ConstraintLayout>
