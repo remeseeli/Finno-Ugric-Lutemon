@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
     // function for eeli testing
     public void eeliTesting() {
-        Lutemon testguy = new Black();
+        Lutemon testGuy = new Black();
+        Lutemon testEnemy = new Black();
         System.out.println();
     }
 }
