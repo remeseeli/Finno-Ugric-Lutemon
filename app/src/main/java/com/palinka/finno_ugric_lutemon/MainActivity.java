@@ -2,6 +2,7 @@ package com.palinka.finno_ugric_lutemon;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Button testButton;
+    private EditText testInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         testButton = findViewById(R.id.eeliButton);
+        testInput = findViewById(R.id.testInput);
     }
     // function for eeli testing
     public void eeliTesting() {
