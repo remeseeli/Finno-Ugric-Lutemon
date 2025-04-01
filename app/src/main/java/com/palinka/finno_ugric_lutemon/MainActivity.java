@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     // function for eeli testing
     public void eeliTesting() {
         Lutemon testGuy = new Black();
+        testGuy.setName("Good guy");
         Lutemon testEnemy = new Black();
+        testEnemy.setName("Bad guy");
         System.out.println();
     }
 }
