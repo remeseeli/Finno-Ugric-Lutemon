@@ -2,10 +2,10 @@ package com.palinka.finno_ugric_lutemon;
 
 public class BattleField {
     public void fight() {
-        /*
-        This is the method that handles the fighting.
-        I will be testing the fight here -eeli
-        */
+        /**
+         * This is the method that handles the fighting.
+         * I will be testing the fight here -eeli
+         */
         try {
             Lutemon testGuy = new Black();
             testGuy.setName("Good guy");
