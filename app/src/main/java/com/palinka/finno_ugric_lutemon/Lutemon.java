@@ -13,4 +13,10 @@ public abstract class Lutemon {
     public int maxHealth;
     public int id;
     private int idCounter;
+    public Lutemon() {
+        // CONSTRUCTOR
+    }
+    /* MORE METHODS
+    HERE
+    LOL */
 }
