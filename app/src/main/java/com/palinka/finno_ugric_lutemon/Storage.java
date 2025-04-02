@@ -35,6 +35,12 @@ public class Storage {
         return totalLevel / lutemonStorage.size(); // Average level
     }
     // Generating an enemy should be added here
+    public Enemy generateEnemy(HashMap<Integer, Lutemon> lutemonStorage) {
+        int baseLevel = getAveragePlayerLevel(lutemonStorage);
+        int enemyLevel; // Implement randomness here too tired rn
+        // and scaling the stats
+        return new Enemy("Something", enemyLevel, attack, defense, health);
+    }
 
     //List lutemons method may not be needed to implement here, at least I don't know yet how, because it should be done with the recycle view.
     //Also some sorting (like according to color OR according to level OR experience) could be implemented later on.
