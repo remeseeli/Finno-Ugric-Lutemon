@@ -61,7 +61,7 @@ public abstract class Lutemon {
     public int getLevel() {return level;}
     public int getHealth() {return health;}
     public int getMaxHealth() {return maxHealth;}
-    public int getId() { return id; }
+    public int getId() {return id;}
     //Setter methods for each variable
     public void setName(String name) {this.name = name;}
     public void setColor(String color) {this.color = color;} //May be deleted if unused
