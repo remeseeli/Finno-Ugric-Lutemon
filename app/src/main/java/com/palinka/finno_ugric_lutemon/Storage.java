@@ -24,6 +24,17 @@ public class Storage {
             return null; //In case of an invalid id, it returns null
         }
     }
+    // This is to calculate difficulty -eeli
+    public int getAveragePlayerLevel(HashMap<Integer, Lutemon> lutemonStorage) {
+        if (lutemonStorage.isEmpty()) return 1; // Default level if no Lutemons exist
+        // Loop through hashmap and get average level of lutemons (we may need a get weakest and get strongest OR filter the extreme values out
+        int totalLevel = 0;
+        for (Lutemon lutemon : lutemonStorage.values()) {
+            totalLevel += lutemon.level;
+        }
+        return totalLevel / lutemonStorage.size(); // Average level
+    }
+    // Generating an enemy should be added here
 
     //List lutemons method may not be needed to implement here, at least I don't know yet how, because it should be done with the recycle view.
     //Also some sorting (like according to color OR according to level OR experience) could be implemented later on.
