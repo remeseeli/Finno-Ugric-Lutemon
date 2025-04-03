@@ -37,7 +37,11 @@ public class Storage {
     // Generating an enemy should be added here
     public Enemy generateEnemy(HashMap<Integer, Lutemon> lutemonStorage) {
         int baseLevel = getAveragePlayerLevel(lutemonStorage);
-        int enemyLevel; // Implement randomness here too tired rn
+        /* The enemy level scaling works here by taking a Math.random() between 0.0 and 2.99.. and casting it into an int
+        The Math.max makes sure the enemy level is not -1, the enemy level difference is in range [-1, 1]
+        If you want to adjust the enemy level scaling to be more broad, change the Math.random multiplier
+        If you want it to be more fair, adjust the subtracting number */
+        int enemyLevel = Math.max(1, baseLevel + (int)(Math.random() * 3) - 1);
         // and scaling the stats
         return new Enemy("Something", enemyLevel, attack, defense, health);
     }
