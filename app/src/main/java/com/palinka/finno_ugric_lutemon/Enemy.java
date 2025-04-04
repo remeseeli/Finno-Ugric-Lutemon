@@ -14,4 +14,5 @@ public class Enemy {
         this.level =level;
         this.health = health;
     }
+
 }

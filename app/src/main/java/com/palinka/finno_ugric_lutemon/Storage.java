@@ -24,6 +24,12 @@ public class Storage {
             return null; //In case of an invalid id, it returns null
         }
     }
+    //getter for the hashmap
+    public HashMap<Integer, Lutemon> getLutemonMap() {
+        return lutemonStorage;
+    }
+
+
     // This is to calculate difficulty -eeli
     public int getAveragePlayerLevel(HashMap<Integer, Lutemon> lutemonStorage) {
         if (lutemonStorage.isEmpty()) return 1; // Default level if no Lutemons exist
@@ -45,7 +51,7 @@ public class Storage {
         int attack = 5 + (enemyLevel * 2);  // Attack scales with level
         int defense = 3 + enemyLevel; // Defense scales slower
         int health = 20 + (enemyLevel * 5); // More HP per level
-        return new Enemy("Something", enemyLevel, attack, defense, health);
+        return new Enemy("Enemy Lutémon", enemyLevel, attack, defense, health);
     }
 
     //List lutemons method may not be needed to implement here, at least I don't know yet how, because it should be done with the recycle view.
