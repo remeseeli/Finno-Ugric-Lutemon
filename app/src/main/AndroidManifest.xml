@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinnoUgricLutemon"
         tools:targetApi="31">
+        <activity android:name=".RecyclerActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

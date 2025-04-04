@@ -1,5 +1,6 @@
 package com.palinka.finno_ugric_lutemon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button testButton;
     private Button createButton;
     private EditText nameInput;
+    private Button recyclerButton;
     Storage storage = Storage.getInstance();
     Home home = new Home();
 
@@ -32,6 +34,21 @@ public class MainActivity extends AppCompatActivity {
         testButton = findViewById(R.id.eeliButton);
         nameInput = findViewById(R.id.testInput);
         createButton = findViewById(R.id.createLutemonButton);
+
+        //Bator: created a button that brings us to the next page, that will contain the recycler view
+        recyclerButton = findViewById(R.id.recyclerButton);
+
+
+        //set up the on click listener
+        recyclerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
+                startActivity(intent);
+            }
+        });
+        //End the testing (Bator)
+
 
         // CREATING A LUTEMON BUTTON
         createButton.setOnClickListener(new View.OnClickListener() {

@@ -7,7 +7,7 @@ public class Storage {
     private HashMap<Integer, Lutemon> lutemonStorage = new HashMap<>();
     private int nextId = 0;
 
-    private Storage(){}
+    Storage(){}
 
     // Storage singleton
     public static Storage getInstance() {
