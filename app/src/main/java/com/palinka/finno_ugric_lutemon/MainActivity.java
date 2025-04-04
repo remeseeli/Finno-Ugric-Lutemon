@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Button testButton;
-    private EditText testInput;
+    private Button createButton;
+    private EditText nameInput;
+    Storage storage = new Storage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +29,27 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         testButton = findViewById(R.id.eeliButton);
-        testInput = findViewById(R.id.testInput);
+        nameInput = findViewById(R.id.testInput);
+        createButton = findViewById(R.id.createLutemonButton);
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Lutemon lutemon = new Black();
+                lutemon.setName(String.valueOf(nameInput.getText()));
+                storage.addLutemon(lutemon);
+                Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
+            }
+        });
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BattleField battle = new BattleField();
+
+            }
+        });
     }
-    // function for eeli testing
+
     public void eeliTesting(View view) {
         try {
             Lutemon testGuy = new Black();

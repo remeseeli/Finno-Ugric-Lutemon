@@ -12,7 +12,6 @@ public class White extends Lutemon {
         this.attack += 3;
         this.defense += 2;
         this.maxHealth += 5;
-        this.health = this.maxHealth; // Heal fully on level up
         System.out.println(name + " leveled up to " + level);
     }
 }

@@ -12,7 +12,6 @@ public class Pink extends Lutemon {
         this.attack += 4;
         this.defense += 1;
         this.maxHealth += 5;
-        this.health = this.maxHealth; // Heal fully on level up
         System.out.println(name + " leveled up to " + level);
     }
 }
