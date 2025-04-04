@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button createButton;
     private EditText nameInput;
     Storage storage = new Storage();
+    Home home = new Home();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +91,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             System.out.println("Training interrupted.");
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-
-
-
         }
     }
 }
