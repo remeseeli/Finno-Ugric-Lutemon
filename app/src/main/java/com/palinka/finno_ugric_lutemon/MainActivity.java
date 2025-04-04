@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button testButton;
     private Button createButton;
     private EditText nameInput;
-    Storage storage = new Storage();
+    Storage storage = Storage.getInstance();
     Home home = new Home();
 
     @Override
@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                home.createLutemon((String.valueOf(nameInput.getText()));
+                home.createLutemon("Black", nameInput.getText().toString());
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
+                System.out.println();
             }
         });
         testButton.setOnClickListener(new View.OnClickListener() {
