@@ -75,4 +75,23 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     } // end of function
+
+    //method for test the training
+    TrainingArea trainingArea = new TrainingArea();
+    Lutemon testGuy = new Black();
+    public void trainTest(View view){
+
+        System.out.println("Black xp: " + testGuy.getExperience());
+        try {
+            trainingArea.train(testGuy);
+            System.out.println("Black xp: " + testGuy.getExperience());
+            Toast.makeText(this, "Training finished " + testGuy.getName() + " gained 10 xp", Toast.LENGTH_LONG).show();
+        } catch (InterruptedException e) {
+            System.out.println("Training interrupted.");
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+
+
+
+        }
+    }
 }
