@@ -12,7 +12,8 @@ public class BattleField {
 
         try {
             while (true) {
-                Thread.sleep(1);
+                System.out.println("The battle starts. ");
+                Thread.sleep(100);
 
             }
         } catch (Exception e) {
