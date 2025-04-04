@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 BattleField battle = new BattleField();
+                battle.fight();
 
             }
         });

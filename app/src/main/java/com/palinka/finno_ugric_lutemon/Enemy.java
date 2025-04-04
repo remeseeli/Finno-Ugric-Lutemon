@@ -14,5 +14,10 @@ public class Enemy {
         this.level =level;
         this.health = health;
     }
-
+    public int attack(Lutemon player) {
+        return Math.max(0, this.attack - player.defense);
+    }
+    public String getName() {
+        return this.name;
+    }
 }

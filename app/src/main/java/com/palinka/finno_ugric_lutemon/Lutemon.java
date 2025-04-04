@@ -30,6 +30,9 @@ public abstract class Lutemon {
         this.maxHealth = maxHealth;
         this.id = id;
     }
+    public int attack(Enemy enemy) {
+        return Math.max(0, this.attack - enemy.defense);
+    }
 
     public void gainXP(int experience) {
         this.experience += experience;
