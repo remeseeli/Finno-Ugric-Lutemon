@@ -2,11 +2,13 @@ package com.palinka.finno_ugric_lutemon;
 
 public class Home {
     //I still don't know how to implement this class, maybe it should be in the mainActivity
+
     public Lutemon createLutemon(String type, String name) {
         switch (type) {
             case "Black":
                 Black black = new Black();
                 black.setName(name);
+                storage.addLutemon(black);
                 return black;
             case "Orange":
                 Orange orange = new Orange();

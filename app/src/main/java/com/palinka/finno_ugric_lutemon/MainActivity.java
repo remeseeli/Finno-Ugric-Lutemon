@@ -37,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Lutemon lutemon = new Black();
-                lutemon.setName(String.valueOf(nameInput.getText()));
-                storage.addLutemon(lutemon);
+                home.createLutemon((String.valueOf(nameInput.getText()));
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
             }
         });

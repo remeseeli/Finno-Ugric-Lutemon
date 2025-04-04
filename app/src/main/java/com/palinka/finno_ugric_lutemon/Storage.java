@@ -3,8 +3,18 @@ package com.palinka.finno_ugric_lutemon;
 import java.util.HashMap;
 
 public class Storage {
+    private static Storage instance = null;
     private HashMap<Integer, Lutemon> lutemonStorage = new HashMap<>();
     private int nextId = 0;
+
+    private Storage(){}
+
+    public static Storage getInstance() {
+        if (instance == null) {
+            instance = new Storage();
+        }
+        return instance;
+    }
 
     /**
     *This method adds the lutemon objects to the gathering hashmap
