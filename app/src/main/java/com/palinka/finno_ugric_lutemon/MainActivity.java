@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         nameInput = findViewById(R.id.testInput);
         createButton = findViewById(R.id.createLutemonButton);
 
+        // CREATING A LUTEMON BUTTON
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
