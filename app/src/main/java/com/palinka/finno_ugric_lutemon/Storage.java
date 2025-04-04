@@ -24,6 +24,12 @@ public class Storage {
             return null; //In case of an invalid id, it returns null
         }
     }
+    //getter for the hashmap
+    public HashMap<Integer, Lutemon> getLutemonMap() {
+        return lutemonStorage;
+    }
+
+
     // This is to calculate difficulty -eeli
     public int getAveragePlayerLevel(HashMap<Integer, Lutemon> lutemonStorage) {
         if (lutemonStorage.isEmpty()) return 1; // Default level if no Lutemons exist
