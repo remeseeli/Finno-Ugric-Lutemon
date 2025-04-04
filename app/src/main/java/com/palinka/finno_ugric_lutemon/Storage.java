@@ -3,8 +3,19 @@ package com.palinka.finno_ugric_lutemon;
 import java.util.HashMap;
 
 public class Storage {
+    private static Storage instance = null;
     private HashMap<Integer, Lutemon> lutemonStorage = new HashMap<>();
     private int nextId = 0;
+
+    private Storage(){}
+
+    // Storage singleton
+    public static Storage getInstance() {
+        if (instance == null) {
+            instance = new Storage();
+        }
+        return instance;
+    }
 
     /**
     *This method adds the lutemon objects to the gathering hashmap
@@ -33,7 +44,7 @@ public class Storage {
     // This is to calculate difficulty -eeli
     public int getAveragePlayerLevel(HashMap<Integer, Lutemon> lutemonStorage) {
         if (lutemonStorage.isEmpty()) return 1; // Default level if no Lutemons exist
-        // Loop through hashmap and get average level of lutemons (we may need a get weakest and get strongest OR filter the extreme values out
+        // Loop through hashmap and get average level of lutemons (we may need a get weakest and get strongest OR filter the extreme values out)
         int totalLevel = 0;
         for (Lutemon lutemon : lutemonStorage.values()) {
             totalLevel += lutemon.level;

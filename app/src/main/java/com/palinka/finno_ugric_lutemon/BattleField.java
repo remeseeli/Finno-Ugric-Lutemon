@@ -2,7 +2,7 @@ package com.palinka.finno_ugric_lutemon;
 
 public class BattleField {
     boolean playerStarts = coinFlip();
-    Storage storage = new Storage();
+    Storage storage = Storage.getInstance();
     /**
      * This is the method that handles the fighting.
      * I will be testing the fight here -eeli
