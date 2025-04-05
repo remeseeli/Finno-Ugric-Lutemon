@@ -77,19 +77,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //method for test the training
-    TrainingArea trainingArea = new TrainingArea();
-    Lutemon testGuy = new Black();
+    //method to go to the training activity
     public void trainTest(View view){
-
-        System.out.println("Black xp: " + testGuy.getExperience());
-        try {
-            trainingArea.train(testGuy);
-            System.out.println("Black xp: " + testGuy.getExperience());
-            Toast.makeText(this, "Training finished " + testGuy.getName() + " gained 10 xp", Toast.LENGTH_LONG).show();
-        } catch (InterruptedException e) {
-            System.out.println("Training interrupted.");
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
+        startActivity(intent);
     }
 }
