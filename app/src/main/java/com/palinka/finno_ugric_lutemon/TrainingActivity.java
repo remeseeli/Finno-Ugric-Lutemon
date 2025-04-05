@@ -55,7 +55,7 @@ public class TrainingActivity extends AppCompatActivity {
         if (selectedLutemon != null) {
             try {
                 trainingArea.train(selectedLutemon);
-                Toast.makeText(this, "Training finished, " + selectedLutemon.getName() + "gained 10 XP", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Training finished, " + selectedLutemon.getName() + " gained 10 XP", Toast.LENGTH_SHORT).show();
             } catch (InterruptedException e) {
                 System.out.println("Training interrupted.");
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
