@@ -3,8 +3,10 @@ package com.palinka.finno_ugric_lutemon;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
+    String[] lutemonTypes = {"Black", "Green", "Pink", "White", "Orange"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         testButton = findViewById(R.id.eeliButton);
         nameInput = findViewById(R.id.testInput);
         createButton = findViewById(R.id.createLutemonButton);
+        //Drop-down menu spinner methods
+        Spinner typeSpinner = findViewById(R.id.lutemonTypeSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, lutemonTypes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeSpinner.setAdapter(adapter);
+        // end of drop-down menu
 
         //Bator: created a button that brings us to the next page, that will contain the recycler view
         recyclerButton = findViewById(R.id.recyclerButton);
@@ -52,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                home.createLutemon("Black", nameInput.getText().toString());
+                String selectedType = typeSpinner.getSelectedItem().toString();
+                String name = nameInput.getText().toString();
+                home.createLutemon(selectedType, name);
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
-                System.out.println();
             }
         });
         testButton.setOnClickListener(new View.OnClickListener() {
