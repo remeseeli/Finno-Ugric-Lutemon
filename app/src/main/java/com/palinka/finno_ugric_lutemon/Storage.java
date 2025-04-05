@@ -1,6 +1,7 @@
 package com.palinka.finno_ugric_lutemon;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Storage {
     private static Storage instance = null;
@@ -38,6 +39,14 @@ public class Storage {
     //getter for the hashmap
     public HashMap<Integer, Lutemon> getLutemonMap() {
         return lutemonStorage;
+    }
+    // This is to test if storage works. -Eeli
+    public void listLutemons(HashMap<Integer, Lutemon> lutemons) {
+        for (Map.Entry<Integer, Lutemon> entry : lutemons.entrySet()) {
+            int id = entry.getKey();
+            Lutemon lutemon = entry.getValue();
+            System.out.println("ID: " + id + "  Name: " + lutemon.name);
+        }
     }
 
 
