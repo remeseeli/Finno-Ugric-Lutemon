@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button testButton, createButton, recyclerButton;
+    private Button testButton, createButton, recyclerButton, battleMenuButton;
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         testButton = findViewById(R.id.eeliButton);
         nameInput = findViewById(R.id.testInput);
         createButton = findViewById(R.id.createLutemonButton);
+        battleMenuButton = findViewById(R.id.battleMenuButton);
         //Drop-down menu spinner methods
         Spinner typeSpinner = findViewById(R.id.lutemonTypeSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, lutemonTypes);
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //End the testing (Bator)
 
 
+
         // CREATING A LUTEMON BUTTON
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
                 BattleField battle = new BattleField();
                 battle.fight();
 
+            }
+        });
+        //method to go to the battle activity
+        battleMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BattleActivity.class);
+                startActivity(intent);
             }
         });
     }
