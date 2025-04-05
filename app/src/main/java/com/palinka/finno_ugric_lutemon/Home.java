@@ -39,5 +39,4 @@ public class Home {
                 throw new IllegalArgumentException("Unknown color: " + type);
         }
     }
-
 }

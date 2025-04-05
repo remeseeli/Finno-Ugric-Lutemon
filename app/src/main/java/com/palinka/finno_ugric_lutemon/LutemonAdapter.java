@@ -56,7 +56,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         holder.textViewColor.setText(lutemon.getColor());
         holder.textViewLevel.setText("lvl: " + lutemon.getLevel());
         holder.textViewMaxHealth.setText("HP: " + lutemon.getMaxHealth());
-        holder.textViewTestosterone.setText("T: " + lutemon.getTestosterone());
+        holder.textViewTestosterone.setText("\uD83D\uDCAA: " + lutemon.getTestosterone());
         holder.textViewAttack.setText("Atk: " + lutemon.getAttack());
         holder.textViewDefense.setText("Def: " + lutemon.getDefense());
 
