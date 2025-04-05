@@ -14,10 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button testButton;
-    private Button createButton;
+    private Button testButton, createButton, recyclerButton;
     private EditText nameInput;
-    private Button recyclerButton;
     Storage storage = Storage.getInstance();
     Home home = new Home();
 
@@ -68,32 +66,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void eeliTesting(View view) {
-        try {
-            Lutemon testGuy = new Black();
-            testGuy.setName("Good guy");
-            Lutemon testEnemy = new Black();
-            testEnemy.setName("Bad guy");
-            while (true) {
-                testGuy.health = testGuy.health - testEnemy.attack;
-                if(testGuy.health <= 0) {
-                    System.out.println(testGuy.getName() + "died. Battle lost.");
-                    break;
-                }
-                System.out.println(testGuy.getName() + "is hit, has " + testGuy.health + " HP left.");
-
-                testEnemy.health = testEnemy.health - testGuy.attack;
-                if(testEnemy.health <= 0) {
-                    System.out.println(testEnemy.getName() + " died. Battle won.");
-                    break;
-                }
-                System.out.println(testEnemy.getName() + "is hit, has " + testGuy.health + "HP left.");
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    } // end of function
 
     //method for test the training
     TrainingArea trainingArea = new TrainingArea();
