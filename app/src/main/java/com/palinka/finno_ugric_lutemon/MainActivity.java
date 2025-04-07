@@ -16,10 +16,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button testButton, createButton, recyclerButton, battleMenuButton;
+    private Button createButton, recyclerButton, battleMenuButton, saveButton;
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
+    LutemonFileHandler filehandler = new LutemonFileHandler();
     String[] lutemonTypes = {"Black", "Green", "Pink", "White", "Orange"};
 
     @Override
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        testButton = findViewById(R.id.eeliButton);
         nameInput = findViewById(R.id.testInput);
         createButton = findViewById(R.id.createLutemonButton);
         battleMenuButton = findViewById(R.id.battleMenuButton);
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Bator: created a button that brings us to the next page, that will contain the recycler view
         recyclerButton = findViewById(R.id.recyclerButton);
+        saveButton = findViewById(R.id.saveButton);
 
 
         //set up the on click listener
@@ -58,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
         //End the testing (Bator)
 
 
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filehandler.saveToFile("save1.ser", storage.getLutemonMap());
+                Toast.makeText(MainActivity.this, "Your collection has been saved.", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
 
         // CREATING A LUTEMON BUTTON
         createButton.setOnClickListener(new View.OnClickListener() {
@@ -69,14 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
             }
         });
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BattleField battle = new BattleField();
-                battle.fight();
 
-            }
-        });
         //method to go to the battle activity
         battleMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +91,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method to go to the training activity
-    public void trainTest(View view){
+    public void trainTest(View view) {
         Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
+
 }

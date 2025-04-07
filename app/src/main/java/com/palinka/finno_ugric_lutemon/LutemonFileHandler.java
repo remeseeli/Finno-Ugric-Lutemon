@@ -1,5 +1,7 @@
 package com.palinka.finno_ugric_lutemon;
 
+import android.widget.Toast;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
