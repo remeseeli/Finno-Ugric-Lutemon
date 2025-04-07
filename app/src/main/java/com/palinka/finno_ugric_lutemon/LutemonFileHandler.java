@@ -1,7 +1,8 @@
 package com.palinka.finno_ugric_lutemon;
 
-import android.widget.Toast;
+import android.view.View;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,10 +18,13 @@ public class LutemonFileHandler implements FileHandler {
      * @param data
      */
     @Override
-    public void saveToFile(String fileName, HashMap<Integer, Lutemon> data) {
-        try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            writer.writeObject(data); //Write the data(the id and the lutemon object) into a .ser file (hopefully)
-        } catch (IOException e){
+    public void saveToFile(View.OnClickListener context, String fileName, HashMap<Integer, Lutemon> data) {
+        try {
+            File file = new File(String.valueOf(context.getClass()), fileName);
+            ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(file));
+            writer.writeObject(data);
+            writer.close();
+        } catch (IOException e) {
             System.out.println("Writing was interrupted due to: " + e.getMessage());
         }
     }

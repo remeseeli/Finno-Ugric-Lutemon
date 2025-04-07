@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button createButton, recyclerButton, battleMenuButton, saveButton;
+    private Button createButton, recyclerButton, battleMenuButton, saveButton, loadButton;
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         //Bator: created a button that brings us to the next page, that will contain the recycler view
         recyclerButton = findViewById(R.id.recyclerButton);
         saveButton = findViewById(R.id.saveButton);
+        loadButton = findViewById(R.id.loadButton);
 
 
         //set up the on click listener
@@ -62,10 +63,17 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filehandler.saveToFile("save1.ser", storage.getLutemonMap());
+                filehandler.saveToFile(this, "save1.ser", storage.getLutemonMap());
                 Toast.makeText(MainActivity.this, "Your collection has been saved.", Toast.LENGTH_SHORT).show();
             }
+        });
 
+        loadButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               filehandler.loadFromFile("save1.ser");
+               Toast.makeText(MainActivity.this, "Your collection has been loaded.", Toast.LENGTH_SHORT).show();
+           }
         });
 
 
