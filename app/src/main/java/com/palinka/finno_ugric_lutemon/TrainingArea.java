@@ -28,7 +28,7 @@ public class TrainingArea {
 
         try{
             //train the lutemon for 1 second
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             lutemon.gainXP(10);
             lastTrainingTime = System.currentTimeMillis();
         }catch (InterruptedException e) {
