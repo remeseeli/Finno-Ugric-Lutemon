@@ -1,7 +1,9 @@
-package com.palinka.finno_ugric_lutemon;
+package com.palinka.finno_ugric_lutemon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.palinka.finno_ugric_lutemon.R;
 
 /**
  * this is the battle activity

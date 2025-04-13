@@ -21,6 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:backgroundTint="#FF706B"
+        android:drawableTint="#FF706B"
         android:onClick="trainLutemon"
         android:text="Train"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +33,7 @@
         android:id="@+id/trainSpinner"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,4 +1,4 @@
-package com.palinka.finno_ugric_lutemon;
+package com.palinka.finno_ugric_lutemon.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.palinka.finno_ugric_lutemon.Lutemon;
+import com.palinka.finno_ugric_lutemon.R;
+import com.palinka.finno_ugric_lutemon.Storage;
+import com.palinka.finno_ugric_lutemon.TrainingArea;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,6 +59,7 @@ public class TrainingActivity extends AppCompatActivity {
         Lutemon selectedLutemon = (Lutemon) trainSpinner.getSelectedItem();
         if (selectedLutemon != null) {
             try {
+                Toast.makeText(this, "Training has started, " + selectedLutemon.getName() + " will be stronger soon", Toast.LENGTH_SHORT).show();
                 trainingArea.train(selectedLutemon);
                 Toast.makeText(this, "Training finished, " + selectedLutemon.getName() + " gained 10 XP", Toast.LENGTH_SHORT).show();
             } catch (InterruptedException e) {

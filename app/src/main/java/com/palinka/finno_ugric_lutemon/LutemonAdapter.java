@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-/**utalom a ciganyokat / en rakasta mustalaisia
+/**
  * this class is the lutemonAdapter.java
  */
 public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonViewHolder> {

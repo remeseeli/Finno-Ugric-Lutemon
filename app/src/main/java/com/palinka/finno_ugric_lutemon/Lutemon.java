@@ -1,10 +1,13 @@
 package com.palinka.finno_ugric_lutemon;
+import java.io.Serializable;
+
 
 /**
  * This class represents a lutemon (abstract)
  *
  */
-public abstract class Lutemon {
+public abstract class Lutemon implements Serializable{
+    private static final long serialVersionUID = 1L; //Needed for the file handling
     public String name;
     public String color;
     public int attack; // Stats for the lutemon

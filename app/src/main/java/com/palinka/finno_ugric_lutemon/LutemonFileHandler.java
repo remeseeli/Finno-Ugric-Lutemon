@@ -1,5 +1,6 @@
 package com.palinka.finno_ugric_lutemon;
 
+import android.content.Context;
 import android.view.View;
 
 import java.io.File;
@@ -18,9 +19,17 @@ public class LutemonFileHandler implements FileHandler {
      * @param data
      */
     @Override
-    public void saveToFile(View.OnClickListener context, String fileName, HashMap<Integer, Lutemon> data) {
+    public void saveToFile(Context context, String fileName, HashMap<Integer, Lutemon> data) {
         try {
-            File file = new File(String.valueOf(context.getClass()), fileName);
+            // Use the app's internal storage directory
+            File directory = context.getFilesDir();
+            File file = new File(directory, fileName);
+
+            // Create the file if it doesn't exist
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
             ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(file));
             writer.writeObject(data);
             writer.close();
@@ -33,7 +42,6 @@ public class LutemonFileHandler implements FileHandler {
      * This method loads the lutemon objects back from the .ser file to the HashMap.
      * @param fileName
      */
-    //csinald meg te cigany vagy beteszem a faszomat a seggedbe
     @Override
     public HashMap<Integer, Lutemon> loadFromFile(String fileName) {
         try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(fileName))) {
@@ -45,7 +53,7 @@ public class LutemonFileHandler implements FileHandler {
     }
 
     /**
-     * This method is to clear the chosen .ser file, allowing to reuse the save "slots".
+     * This method is to clear the chosen .ser file, allowing to reuse the save "slots". (still unused)
      * @param fileName
      */
     @Override
