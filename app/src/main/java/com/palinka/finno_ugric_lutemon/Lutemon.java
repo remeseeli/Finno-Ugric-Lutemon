@@ -1,5 +1,9 @@
 package com.palinka.finno_ugric_lutemon;
 
+/**
+ * This class represents a lutemon (abstract)
+ *
+ */
 public abstract class Lutemon {
     public String name;
     public String color;

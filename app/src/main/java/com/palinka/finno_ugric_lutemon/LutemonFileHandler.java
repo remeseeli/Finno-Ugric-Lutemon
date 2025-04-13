@@ -33,6 +33,7 @@ public class LutemonFileHandler implements FileHandler {
      * This method loads the lutemon objects back from the .ser file to the HashMap.
      * @param fileName
      */
+    //csinald meg te cigany vagy beteszem a faszomat a seggedbe
     @Override
     public HashMap<Integer, Lutemon> loadFromFile(String fileName) {
         try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(fileName))) {
