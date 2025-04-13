@@ -141,4 +141,5 @@
 
     <!-- Added suppress warning for HardcodedText -->
     <!-- This is how you do comments on XML by the way -->
+    <!--PLS WORK NOW -->
 </androidx.constraintlayout.widget.ConstraintLayout>
