@@ -1,4 +1,4 @@
-package com.palinka.finno_ugric_lutemon;
+package com.palinka.finno_ugric_lutemon.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.palinka.finno_ugric_lutemon.Home;
+import com.palinka.finno_ugric_lutemon.LutemonFileHandler;
+import com.palinka.finno_ugric_lutemon.R;
+import com.palinka.finno_ugric_lutemon.Storage;
 
 public class MainActivity extends AppCompatActivity {
     private Button createButton, recyclerButton, battleMenuButton, saveButton, loadButton;
@@ -63,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filehandler.saveToFile(this, "save1.ser", storage.getLutemonMap());
+                filehandler.saveToFile(MainActivity.this, "save1.ser", storage.getLutemonMap());
                 Toast.makeText(MainActivity.this, "Your collection has been saved.", Toast.LENGTH_SHORT).show();
             }
         });

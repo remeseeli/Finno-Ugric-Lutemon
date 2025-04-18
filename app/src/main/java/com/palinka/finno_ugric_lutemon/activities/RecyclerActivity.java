@@ -1,10 +1,15 @@
-package com.palinka.finno_ugric_lutemon;
+package com.palinka.finno_ugric_lutemon.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.palinka.finno_ugric_lutemon.Lutemon;
+import com.palinka.finno_ugric_lutemon.LutemonAdapter;
+import com.palinka.finno_ugric_lutemon.R;
+import com.palinka.finno_ugric_lutemon.Storage;
 
 import java.util.ArrayList;
 

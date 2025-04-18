@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
+/**
+ * this class is the lutemonAdapter.java
+ */
 public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonViewHolder> {
 
     private ArrayList<Lutemon> lutemonList;
@@ -27,7 +29,10 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
                 textViewTestosterone, textViewAttack, textViewDefense;
 
 
-
+        /**
+         * this class is the LutemonViewHolder xdddd
+         * @param itemView
+         */
         public LutemonViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
@@ -48,6 +53,12 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         return new LutemonViewHolder(view);
     }
 
+    /**
+     * this class is onBindViewHolder
+     * @param holder The ViewHolder which should be updated to represent the contents of the
+     *        item at the given position in the data set.
+     * @param position The position of the item within the adapter's data set.
+     */
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
         Lutemon lutemon = lutemonList.get(position);
@@ -63,12 +74,19 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
 
     }
 
+    /**
+     * this class is onBindViewHolder (i hate the niggers)
+     * @return
+     */
     @Override
     public int getItemCount() {
         return lutemonList.size();
     }
 
-
+    /**
+     * this is the updateData
+     * @param newLutemonList
+     */
     //This method is for the case if a new object has been added to the list, it refreshes the list and the recycler view will show the new one as well.
     public void updateData(ArrayList<Lutemon> newLutemonList) {
         lutemonList = newLutemonList;
