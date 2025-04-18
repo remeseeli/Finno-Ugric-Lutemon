@@ -38,7 +38,14 @@ public abstract class Lutemon implements Serializable{
         this.id = id;
     }
     public int attack(Enemy enemy) {
-        return Math.max(0, this.attack - enemy.defense);
+        if(Math.random() < getTestosterone() / 100.0)  {
+            // Critical hit
+            return Math.max(1, this.attack * 2 - enemy.defense);
+        }
+        else {
+            // Normal hit
+            return Math.max(1, this.attack - enemy.defense);
+        }
     }
 
     public void gainXP(int experience) {

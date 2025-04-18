@@ -1,59 +1,46 @@
 package com.palinka.finno_ugric_lutemon;
 
+import android.os.SystemClock;
+
 public class BattleField {
-    Storage storage = Storage.getInstance();
-    /**
-     * This is the method that handles the fighting.
-     * I will be testing the fight here -eeli
-     */
-    public void fight() {
-        Enemy enemy = storage.generateEnemy(storage.getLutemonMap());
-        Lutemon player = storage.getLutemon(0);
-        if (player == null) {
-            System.out.println("Error: No Lutemon found for the player!");
-            return;
-        }
-        if (enemy == null) {
-            System.out.println("Error: Failed to generate an enemy!");
-            return;
-        }
+    public interface BattleCallback {
+        void onTurnUpdate(String log, int playerHP, int enemyHP);
+        void onBattleEnd(String result);
+    }
+    private static final long TURN_DELAY = 1000; // 2 seconds between turns
+    public void fight(Lutemon player, Enemy enemy, BattleCallback callback) {
+        boolean playerStarts = Math.random() < 0.5;
+        boolean isPlayerTurn = playerStarts;
 
-        System.out.println("The battle starts. Flipping a coin...");
-        boolean playerStarts = coinFlip(); // Determine who starts
-        boolean isPlayerTurn = playerStarts; // Keep track of turns correctly
+        callback.onTurnUpdate((playerStarts ? "You won the coin flip! You start!" : "Enemy won the coin flip! Enemy starts!"), player.health, enemy.getHealth());
 
-        // Announce the coin flip result
-        System.out.println(playerStarts ? "You won the coin flip! You attack first."
-                : "You lost the coin flip! Enemy attacks first.");
-
-        // Battle loop
-        while (player.health > 0 && enemy.health > 0) {
-            System.out.println("\nYour HP: " + player.health + " | Enemy HP: " + enemy.health);
-
+        while (player.health > 0 && enemy.getHealth() > 0) {
+            String log;
             if (isPlayerTurn) {
                 int damage = player.attack(enemy);
-                enemy.health -= damage;
-                System.out.println("You attack and deal " + damage + " damage!");
+                enemy.health = Math.max(0, enemy.getHealth() - damage);
+                log = player.getName() + " attacks for " + damage + " damage!";
             } else {
                 int damage = enemy.attack(player);
-                player.health -= damage;
-                System.out.println("Enemy attacks and deals " + damage + " damage!");
+                player.health = Math.max(0, player.health - damage);
+                log = "Enemy attacks for " + damage + " damage!";
             }
 
+            callback.onTurnUpdate(log, player.health, enemy.getHealth());
             isPlayerTurn = !isPlayerTurn;
 
-            // Small delay for readability (optional)
-            try {
-                Thread.sleep(500); }
-            catch (InterruptedException e) {
-                e.printStackTrace(); }
+            // Add delay between turns to slow down the battle
+            SystemClock.sleep(TURN_DELAY);
         }
 
-        // Announce winner
-        System.out.println(player.health <= 0 ? "\n⚔️ You lost! The enemy defeated you!"
-                : "\n🎉 Victory! You defeated the enemy !");
-        }
-    private boolean coinFlip() {
-        return Math.random() < 0.5; // 50% chance (true = player, false = enemy)
+        // Add a longer delay before showing the final result
+        SystemClock.sleep(TURN_DELAY);
+
+        String result = (player.health <= 0)
+                ? "💀 You lost the battle!\n" + player.getName() + "is healing back to full health!"
+                : "🎉 You won the battle!\n" + player.getName() + " gained " + enemy.getLevel() * 10 + " XP!";
+        callback.onBattleEnd(result);
+        player.setHealth(player.maxHealth); // Heal player after battle
+        player.gainXP(enemy.getLevel() * 10); // Gain XP based on enemy level
     }
 }

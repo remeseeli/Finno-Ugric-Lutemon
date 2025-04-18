@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         battleMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BattleActivity.class);
+                Intent intent = new Intent(MainActivity.this, LutemonSelectorActivity.class);
                 startActivity(intent);
             }
         });

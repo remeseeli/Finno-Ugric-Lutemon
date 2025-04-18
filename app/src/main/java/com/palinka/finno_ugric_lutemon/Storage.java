@@ -4,17 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Storage {
-    private static Storage instance = null;
+    private static final Storage instance = new Storage(); // Final and eager initialization
     private HashMap<Integer, Lutemon> lutemonStorage = new HashMap<>();
     private int nextId = 0;
 
-    Storage(){}
+    private Storage(){}
 
     // Storage singleton
     public static Storage getInstance() {
-        if (instance == null) {
-            instance = new Storage();
-        }
         return instance;
     }
 
@@ -66,12 +63,13 @@ public class Storage {
         The Math.max makes sure the enemy level is not -1, the enemy level difference is in range [-1, 1]
         If you want to adjust the enemy level scaling to be more broad, change the Math.random multiplier
         If you want it to be more fair, adjust the subtracting number */
-        int enemyLevel = Math.max(1, baseLevel + (int)(Math.random() * 3) - 1);
+        int enemyLevel = Math.max(1, baseLevel + (int)(Math.random() * 2) - 1);
         // Enemy stats will scale according to their level
         int attack = 5 + (enemyLevel * 2);  // Attack scales with level
         int defense = 3 + enemyLevel; // Defense scales slower
         int health = 20 + (enemyLevel * 5); // More HP per level
-        return new Enemy("Enemy Lutémon", enemyLevel, attack, defense, health);
+        int maxHealth = health; // Max health is the same as current health for enemies
+        return new Enemy("Enemy Lutémon", enemyLevel, attack, defense, health, maxHealth);
     }
 
     //List lutemons method may not be needed to implement here, at least I don't know yet how, because it should be done with the recycle view.

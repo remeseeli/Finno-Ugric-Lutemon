@@ -32,8 +32,8 @@ public class TrainingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
-        testTrainButton = findViewById(R.id.testTrainButton);
-        trainSpinner = findViewById(R.id.trainSpinner);
+        testTrainButton = findViewById(R.id.enterFightButton);
+        trainSpinner = findViewById(R.id.selectionSpinner);
 
         // Initialize the Storage instance and get the lutemon map
 
