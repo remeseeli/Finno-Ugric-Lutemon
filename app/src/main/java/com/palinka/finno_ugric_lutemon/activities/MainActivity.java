@@ -21,7 +21,7 @@ import com.palinka.finno_ugric_lutemon.R;
 import com.palinka.finno_ugric_lutemon.Storage;
 
 public class MainActivity extends AppCompatActivity {
-    private Button createButton, recyclerButton, battleMenuButton, saveButton, loadButton;
+    private Button createButton, recyclerButton, battleMenuButton, saveButton, loadButton, clearButton;
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerButton = findViewById(R.id.recyclerButton);
         saveButton = findViewById(R.id.saveButton);
         loadButton = findViewById(R.id.loadButton);
+        clearButton = findViewById(R.id.clearButton);
 
 
         //set up the on click listener
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filehandler.saveToFile(MainActivity.this, "save1.ser", storage.getLutemonMap());
+                filehandler.saveToFile(MainActivity.this);
                 Toast.makeText(MainActivity.this, "Your collection has been saved.", Toast.LENGTH_SHORT).show();
             }
         });
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               filehandler.loadFromFile("save1.ser");
+               filehandler.loadFromFile(MainActivity.this);
                Toast.makeText(MainActivity.this, "Your collection has been loaded.", Toast.LENGTH_SHORT).show();
            }
         });
@@ -90,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
                 String name = nameInput.getText().toString();
                 home.createLutemon(selectedType, name);
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filehandler.clearFile(MainActivity.this);
+                Toast.makeText(MainActivity.this, "Your collection has been cleared.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,8 +119,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
 }
+
+
+
+
+
+

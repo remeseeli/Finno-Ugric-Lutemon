@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="220dp"
-        android:text="Lutemon Arena"
+        android:text="Lutemon Arena 🐍"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
@@ -50,7 +50,7 @@
         <EditText
             android:id="@+id/testInput"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="50dp"
             android:ems="10"
             android:hint="Name your Lutemon"
             android:inputType="text" />
@@ -58,7 +58,7 @@
         <Spinner
             android:id="@+id/lutemonTypeSpinner"
             android:layout_width="match_parent"
-            android:layout_height="46dp" />
+            android:layout_height="48dp" />
 
         <Button
             android:id="@+id/createLutemonButton"
@@ -98,22 +98,31 @@
 
             <Button
                 android:id="@+id/saveButton"
-                android:layout_width="179dp"
+                android:layout_width="119dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="140dp"
                 android:backgroundTint="#FF6B6B"
-                android:text="Save Lutemons" />
+                android:text="Save 💾" />
 
             <Button
                 android:id="@+id/loadButton"
-                android:layout_width="179dp"
+                android:layout_width="119dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#FD6B6B"
-                android:text="Load Lutemons" />
+                android:text="Load 📥" />
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="119dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FF706B"
+                android:text="Clear ❌" />
+
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="409dp"
         android:layout_height="100dp"
         android:background="@drawable/rounded_corner_background"
@@ -134,7 +143,7 @@
             android:layout_marginBottom="40dp"
             android:layout_weight="1"
             android:backgroundTint="#FF6B6B"
-            android:text="Battle" />
+            android:text="Battle ⚔️" />
 
         <Button
             android:id="@+id/button"
