@@ -30,19 +30,19 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
 
 
         /**
-         * this class is the LutemonViewHolder xdddd
+         * this class is the LutemonViewHolder
          * @param itemView
          */
         public LutemonViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-            textViewName = itemView.findViewById(R.id.textView);
-            textViewColor = itemView.findViewById(R.id.textView2);
+            textViewName = itemView.findViewById(R.id.textViewStat);
+            textViewColor = itemView.findViewById(R.id.textViewStat2);
             textViewLevel = itemView.findViewById(R.id.textView3);
             textViewMaxHealth = itemView.findViewById(R.id.textView4);
             textViewTestosterone = itemView.findViewById(R.id.textView5);
-            textViewAttack = itemView.findViewById(R.id.textView6);
-            textViewDefense = itemView.findViewById(R.id.textView7);
+            textViewAttack = itemView.findViewById(R.id.textViewStat3);
+            textViewDefense = itemView.findViewById(R.id.textViewStat4);
         }
     }
 
@@ -75,7 +75,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
     }
 
     /**
-     * this class is onBindViewHolder (i hate the niggers)
+     * this class is onBindViewHolder
      * @return
      */
     @Override

@@ -16,11 +16,10 @@ public class TrainingArea {
      * @param lutemon
      * @throws InterruptedException
      * @throws IllegalArgumentException
-     *
      */
     public void train(Lutemon lutemon) throws InterruptedException {
         long currentTime = System.currentTimeMillis();
-        long oneHour = 3600000; // 1 hour in milliseconds
+        long oneHour = 10000; // 1 hour in milliseconds
         //Check if the one hour has passed since the last training
         if (currentTime - lastTrainingTime < oneHour){
             throw new InterruptedException("You can only train once every hour.");
@@ -31,6 +30,7 @@ public class TrainingArea {
             Thread.sleep(10000);
             lutemon.gainXP(10);
             lastTrainingTime = System.currentTimeMillis();
+            lutemon.incrementTrainings();
         }catch (InterruptedException e) {
             throw new InterruptedException("Training interrupted." + e.getMessage());
         }

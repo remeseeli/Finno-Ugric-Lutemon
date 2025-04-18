@@ -17,6 +17,7 @@
         <activity android:name=".activities.TrainingActivity" />
         <activity android:name=".activities.BattleActivity"/>
         <activity android:name=".activities.LutemonSelectorActivity"/>
+        <activity android:name=".activities.StatisticActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">

@@ -23,6 +23,12 @@ public abstract class Lutemon implements Serializable {
     private final int baseExperience = 100;
     private int idCounter;
 
+    //Attributes for the statictics
+    private int numberOfwins = 0;
+    private int numberOflosses = 0;
+    private int numberOfBattles = 0;
+    private int numberOfTrainings = 0;
+
     public Lutemon(String name, String color, int attack, int defense, int testosterone, int experience, int level, int health, int maxHealth, int id) {
         // CONSTRUCTOR
         this.name = name;
@@ -71,6 +77,11 @@ public abstract class Lutemon implements Serializable {
     public int getMaxHealth() {return maxHealth;}
     public int getId() {return id;}
 
+    public int getNumberOfWins() {return numberOfwins;}
+    public int getNumberOfLosses() {return numberOflosses;}
+    public int getNumberOfBattles() {return numberOfBattles;}
+    public int getNumberOfTrainings() {return numberOfTrainings;}
+
     //Setter methods for each variable
     public void setName(String name) {this.name = name;}
     public void setColor(String color) {this.color = color;} //May be deleted if unused
@@ -81,6 +92,13 @@ public abstract class Lutemon implements Serializable {
     public void setLevel(int level) {this.level = level;}
     public void setHealth(int health) {this.health = health;}
     public void setMaxHealth(int maxHealth) {this.maxHealth = maxHealth;}
+
+    //Setter methods for the statistics
+    public void incrementWins() {this.numberOfwins++;}
+    public void incrementLosses() {this.numberOflosses++;}
+    public void incrementBattles() {this.numberOfBattles++;}
+    public void incrementTrainings() {this.numberOfTrainings++;}
+
 
     //this method is needed for the spinner in the TrainActivity
     @Override

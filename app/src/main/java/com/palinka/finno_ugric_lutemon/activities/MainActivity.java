@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method to go to the training activity
-    public void trainTest(View view) {
+    public void trainingGround(View view) {
         Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
         startActivity(intent);
     }
