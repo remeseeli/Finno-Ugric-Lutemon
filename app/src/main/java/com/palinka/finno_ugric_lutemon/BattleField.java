@@ -37,7 +37,7 @@ public class BattleField {
         SystemClock.sleep(TURN_DELAY);
 
         String result = (player.health <= 0)
-                ? "💀 You lost the battle!\n" + player.getName() + "is healing back to full health!"
+                ? "💀 You lost the battle!\n" + player.getName() + " is healing back to full health!"
                 : "🎉 You won the battle!\n" + player.getName() + " gained " + enemy.getLevel() * 10 + " XP!";
         callback.onBattleEnd(result);
         player.setHealth(player.maxHealth); // Heal player after battle
