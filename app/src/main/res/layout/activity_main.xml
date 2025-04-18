@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CED4DD"
-    tools:context=".MainActivity">
+    tools:context="com.palinka.finno_ugric_lutemon.activities.MainActivity">
 
     <TextView
         android:id="@+id/textView14"
