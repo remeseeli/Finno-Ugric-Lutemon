@@ -1,5 +1,8 @@
 package com.palinka.finno_ugric_lutemon;
-
+/**
+ * Green class represents a subclass of Lutemon.
+ * @see Lutemon
+ */
 public class Green extends Lutemon {
     public Green() {
         super("defaultGreen", "Green", 6, 3, 1, 0, 1, 19, 19, 0);

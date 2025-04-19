@@ -1,7 +1,7 @@
 package com.palinka.finno_ugric_lutemon;
 
 public class Home {
-    // This class is used to create Lutemons and add them to the storage.
+    //I still don't know how to implement this class, maybe it should be in the mainActivity
     Storage storage = Storage.getInstance();
     public Lutemon createLutemon(String type, String name) {
         switch (type) {

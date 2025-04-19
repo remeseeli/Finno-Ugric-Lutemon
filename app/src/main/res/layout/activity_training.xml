@@ -60,7 +60,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/enterFightButton"
+            android:id="@+id/trainButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="#FF706B"

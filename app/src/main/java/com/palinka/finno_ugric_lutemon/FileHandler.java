@@ -5,7 +5,9 @@ import android.view.View;
 
 import java.util.HashMap;
 
-//Interface for file handling
+/**
+ * This interface defines methods for saving, loading, and clearing data from a file.
+ */
 public interface FileHandler {
     void saveToFile(Context context);
     void loadFromFile(Context context);

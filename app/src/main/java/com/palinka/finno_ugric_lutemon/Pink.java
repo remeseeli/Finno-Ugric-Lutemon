@@ -1,10 +1,16 @@
 package com.palinka.finno_ugric_lutemon;
 
+/**
+ * Pink class represents a subclass of Lutemon.
+ * @see Lutemon
+ */
 public class Pink extends Lutemon {
     public Pink() {
         super("defaultPink", "Pink", 7, 2, 1, 0, 1, 18, 18, 0);
 
     }
+
+
     @Override
     protected void levelUp() {
         this.experience -= getRequiredExperience(); // Subtract required XP to level up, so XP can be carried over for next level

@@ -27,7 +27,7 @@ public class Storage {
     }
     /**
     /This method returns the object (specific lutemon) according to the assigned id]
-    /*/
+    */
     public Lutemon getLutemon(int id) {
         if (lutemonStorage.get(id) != null) { //In case of a valid id, it returns the object
             return lutemonStorage.get(id);
