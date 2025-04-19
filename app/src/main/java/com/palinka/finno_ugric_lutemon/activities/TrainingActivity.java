@@ -69,12 +69,12 @@ public class TrainingActivity extends AppCompatActivity {
             }
 
             //Disaple the train button
-            testTrainButton.setEnabled(false);
+            trainButton.setEnabled(false);
             new CountDownTimer(10000, 1000) { // 10 seconds, tick every 1 second
                 @Override
                 public void onTick(long millisUntilFinished) {
                     // Display the remaining time
-                    testTrainButton.setText((millisUntilFinished / 1000) + " seconds remaining");
+                    trainButton.setText((millisUntilFinished / 1000) + " seconds remaining");
 
                 }
                 @Override
@@ -84,8 +84,8 @@ public class TrainingActivity extends AppCompatActivity {
                     //The training is finished, so we have to show a message somehow
 
                     //Enable the train button
-                    testTrainButton.setEnabled(true);
-                    testTrainButton.setText("Train");
+                    trainButton.setEnabled(true);
+                    trainButton.setText("Train");
                     Toast.makeText(TrainingActivity.this, selectedLutemon.getName() + "gained 10 experience points.", Toast.LENGTH_LONG).show();
                 }
             }.start();
