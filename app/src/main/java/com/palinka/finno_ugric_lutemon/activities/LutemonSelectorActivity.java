@@ -18,7 +18,8 @@ import com.palinka.finno_ugric_lutemon.Storage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+// LutemonSelectorActivity is the activity that allows the user to select a Lutemon for battle
+// Made by Claude AI, but I have made some changes to the code and added comments for better readability
 public class LutemonSelectorActivity extends AppCompatActivity {
     private Storage storage;
     private ListView lutemonListView;

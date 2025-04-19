@@ -21,11 +21,13 @@ import com.palinka.finno_ugric_lutemon.R;
 import com.palinka.finno_ugric_lutemon.Storage;
 
 public class MainActivity extends AppCompatActivity {
+    // UI elements
     private Button createButton, recyclerButton, battleMenuButton, saveButton, loadButton, clearButton;
     private EditText nameInput;
     Storage storage = Storage.getInstance();
     Home home = new Home();
     LutemonFileHandler filehandler = new LutemonFileHandler();
+    // Array of Lutemon types for the drop-down menu
     String[] lutemonTypes = {"Black", "Green", "Pink", "White", "Orange"};
 
     @Override
@@ -48,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
         typeSpinner.setAdapter(adapter);
         // end of drop-down menu
 
-        //Bator: created a button that brings us to the next page, that will contain the recycler view
+        //Buttons for the Storage, and file handling
         recyclerButton = findViewById(R.id.recyclerButton);
         saveButton = findViewById(R.id.saveButton);
         loadButton = findViewById(R.id.loadButton);
         clearButton = findViewById(R.id.clearButton);
 
 
-        //set up the on click listener
+        //set up the on click listener for RecyclerActivity
         recyclerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //End the testing (Bator)
 
-
+        //set up the on click listener for the file handling buttons
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Your collection has been saved.", Toast.LENGTH_SHORT).show();
             }
         });
-
         loadButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Lutemon Created", Toast.LENGTH_SHORT).show();
             }
         });
-
+        // Button listener for clearing the file
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //method to go to the battle activity
+        //Click listener to go to the battle activity
         battleMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

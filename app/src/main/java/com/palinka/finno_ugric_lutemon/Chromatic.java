@@ -3,7 +3,8 @@ package com.palinka.finno_ugric_lutemon;
 public class Chromatic extends Lutemon {
     public Chromatic() {
         super("defaultChromatic", "Chromatic", 10, 10, 10, 0, 10, 10, 10, 10);
-
+        // This is the "Chromatic" Lutemon type, that was meant to be used as the special "Janne" lutemon
+        // Due to time constraints , was not implemented in the game
     }
     @Override
     protected void levelUp() {

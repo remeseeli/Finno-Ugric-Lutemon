@@ -15,7 +15,9 @@ import com.palinka.finno_ugric_lutemon.Enemy;
 import com.palinka.finno_ugric_lutemon.Lutemon;
 import com.palinka.finno_ugric_lutemon.R;
 import com.palinka.finno_ugric_lutemon.Storage;
-
+// BattleActivity handles the actual battle after selecting a lutemon in the SelectorView
+// This activity was made largely with help by Claude AI, but I have made some changes to the code to make it more readable and understandable
+// and to fit the rest of the codebase. I have also added some comments to explain the code better.
 public class BattleActivity extends AppCompatActivity implements BattleField.BattleCallback {
     private Storage storage;
     private BattleField battleField;
@@ -37,6 +39,7 @@ public class BattleActivity extends AppCompatActivity implements BattleField.Bat
     private boolean battleInProgress = false;
 
     // Delay between battle turns in milliseconds - increase this to slow down the battle pace
+    // In fact, this should be adjusted in BattleField.java so that it actually works, the implementation here is just a placeholder
     private final int TURN_DELAY = 2000; // 2 seconds between turns
 
     @Override
@@ -65,8 +68,9 @@ public class BattleActivity extends AppCompatActivity implements BattleField.Bat
             finishWithError("No Lutemon selected");
             return;
         }
-
+        // Retrieve the selected Lutemon from storage
         playerLutemon = storage.getLutemon(lutemonId);
+        // Check if the Lutemon exists (Should not happen though)
         if (playerLutemon == null) {
             finishWithError("Selected Lutemon not found");
             return;
