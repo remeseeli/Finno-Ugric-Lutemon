@@ -3,14 +3,16 @@ import java.io.Serializable;
 
 
 /**
- * This class represents a lutemon (abstract)
+ * This class represents a Lutemon, which is a creature that can battle and train.
+ * It has stats, such as attack, defense, and testosterone, which can be leveled up.
+ * It also has a name, and most importantly color, since it has several subclasses that represent different types of Lutemons.
  */
 public abstract class Lutemon implements Serializable {
     public String name;
     public String color;
     public int attack; // Stats for the lutemon
     public int defense;
-    public int testosterone; // Custom stat of our own, will probably be health regeneration?
+    public int testosterone; // Custom stat of our own, that is used for critical hits
     public int experience;
     public int level;
     // health represents the CURRENT health.
@@ -41,6 +43,8 @@ public abstract class Lutemon implements Serializable {
         this.maxHealth = maxHealth;
         this.id = id;
     }
+    // Lutemon's attack method, which calculates damage based on attack and enemy's defense.
+    // Critical hit chance is testosterone in percents (1 = 1% chance).
     public int attack(Enemy enemy) {
         if(Math.random() < getTestosterone() / 100.0)  {
             // Critical hit
@@ -51,7 +55,7 @@ public abstract class Lutemon implements Serializable {
             return Math.max(1, this.attack - enemy.defense);
         }
     }
-
+    // Level up method, that allows for overflow of experience points for the next level.
     public void gainXP(int experience) {
         this.experience += experience;
         while (this.experience >= getRequiredExperience()) {
@@ -62,9 +66,7 @@ public abstract class Lutemon implements Serializable {
 
 
     //Getter methods for each variable
-    public int getRequiredExperience() {
-        return baseExperience * level;
-    }
+    public int getRequiredExperience() { return baseExperience * level; }
     public String getName() {return name;}
     public String getColor() {return color;}
     public int getAttack() {return attack;}
