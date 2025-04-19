@@ -24,7 +24,7 @@ import java.util.List;
  * Activity for training Lutemons.
  */
 public class TrainingActivity extends AppCompatActivity {
-    private Button testTrainButton;
+    private Button trainButton;
     private Spinner trainSpinner;
     private HashMap<Integer, Lutemon> lutemonMap;
 
@@ -33,8 +33,8 @@ public class TrainingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
-        testTrainButton = findViewById(R.id.trainButton);
         trainSpinner = findViewById(R.id.selectionSpinner);
+        trainButton = findViewById(R.id.trainButton);
 
         // Initialize the Storage instance and get the lutemon map
 
