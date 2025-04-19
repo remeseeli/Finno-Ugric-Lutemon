@@ -177,5 +177,5 @@
     </LinearLayout>
 
     <!-- Added suppress warning for HardcodedText -->
-    <!-- This is how you do comments on XML by the way -->
+    <!-- This is how you do comments on XML by the way. -->
 </androidx.constraintlayout.widget.ConstraintLayout>
