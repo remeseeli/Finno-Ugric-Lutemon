@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#CED4DD">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lutemonRecyclerView"
@@ -15,28 +16,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/statisticsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="#FD6B6B"
-        android:onClick="goToStatisticActivity"
-        android:text="Statistics"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="389dp"
+        android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="@+id/lutemonRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    <Button
-        android:id="@+id/goHomeButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#FD6B6B"
-        android:onClick="goToMainActivity"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="@+id/lutemonRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/statisticsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FD6B6B"
+            android:onClick="goToStatisticActivity"
+            android:text="Statistics 📈"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

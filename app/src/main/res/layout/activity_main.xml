@@ -10,9 +10,10 @@
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="390dp"
+        android:layout_height="30dp"
         android:layout_marginBottom="220dp"
+        android:background="@drawable/rounded_corner_background"
         android:text="Lutemon Arena 🐍"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -65,7 +66,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF706B"
-            android:text="Create Lutemon" />
+            android:text="Create Lutemon"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,21 +105,24 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="140dp"
                 android:backgroundTint="#FF6B6B"
-                android:text="Save 💾" />
+                android:text="Save 💾"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/loadButton"
                 android:layout_width="119dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#FD6B6B"
-                android:text="Load 📥" />
+                android:text="Load 📥"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/clearButton"
                 android:layout_width="119dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#FF706B"
-                android:text="Clear ❌" />
+                android:text="Clear ❌"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>
@@ -143,7 +149,8 @@
             android:layout_marginBottom="40dp"
             android:layout_weight="1"
             android:backgroundTint="#FF6B6B"
-            android:text="Battle ⚔️" />
+            android:text="Battle ⚔️"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button"
@@ -154,7 +161,8 @@
             android:layout_weight="1"
             android:backgroundTint="#FF6B6B"
             android:onClick="trainingGround"
-            android:text="Training" />
+            android:text="Training"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/recyclerButton"
@@ -164,9 +172,10 @@
             android:layout_marginBottom="40dp"
             android:layout_weight="1"
             android:backgroundTint="#FF6B6B"
-            android:text="Lutemons" />
+            android:text="Lutemons"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Added suppress warning for HardcodedText -->
-    <!-- This is how you do comments on XML by the way -->
+    <!-- This is how you do comments on XML by the way. -->
 </androidx.constraintlayout.widget.ConstraintLayout>
