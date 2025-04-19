@@ -40,6 +40,12 @@ public class RecyclerActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StatisticActivity.class);
         startActivity(intent);
     }
+
+    //Go to the MainActivity
+    public void goToMainActivity(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
 
 

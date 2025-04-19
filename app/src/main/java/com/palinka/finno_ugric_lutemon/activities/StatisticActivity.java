@@ -1,6 +1,8 @@
 package com.palinka.finno_ugric_lutemon.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,5 +33,11 @@ public class StatisticActivity extends AppCompatActivity {
 
         adapter = new StatisticAdapter(lutemonList);
         recyclerView.setAdapter(adapter);
+    }
+
+    //Go to the MainActivity
+    public void goToLutemons(View view) {
+        Intent intent = new Intent(this, RecyclerActivity.class);
+        startActivity(intent);
     }
 }
