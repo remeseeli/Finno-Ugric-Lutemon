@@ -1,5 +1,9 @@
 package com.palinka.finno_ugric_lutemon;
 
+/**
+ * Orange class represents a subclass of Lutemon.
+ * @see Lutemon
+ */
 public class Orange extends Lutemon {
     public Orange() {
         super("defaultOrange", "Orange", 8, 1, 1, 0, 1, 17, 17, 0);

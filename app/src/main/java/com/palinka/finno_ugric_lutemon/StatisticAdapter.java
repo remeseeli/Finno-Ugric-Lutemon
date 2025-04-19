@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * Adapter class for displaying statistics of Lutemons in a RecyclerView.
+ */
 public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.StatisticViewHolder> {
 
     private ArrayList<Lutemon> lutemonList;
