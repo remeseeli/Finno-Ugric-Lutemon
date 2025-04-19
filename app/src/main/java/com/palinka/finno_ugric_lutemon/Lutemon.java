@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  * This class represents a lutemon (abstract)
- *
  */
 public abstract class Lutemon implements Serializable {
     public String name;

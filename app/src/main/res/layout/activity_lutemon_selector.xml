@@ -29,7 +29,8 @@
         android:id="@+id/selectButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Battle"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FD6B6B"
+        android:text="Go to Battle" />
 
 </LinearLayout>

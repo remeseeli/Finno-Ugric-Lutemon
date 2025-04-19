@@ -42,5 +42,13 @@ public class BattleField {
         callback.onBattleEnd(result);
         player.setHealth(player.maxHealth); // Heal player after battle
         player.gainXP(enemy.getLevel() * 10); // Gain XP based on enemy level
+
+        //Update statistics
+        player.incrementBattles();
+        if (player.health <= 0) {
+            player.incrementLosses();
+        } else {
+            player.incrementWins();
+        }
     }
 }

@@ -9,30 +9,13 @@ import android.widget.Toast;
  * @methods train
  */
 public class TrainingArea {
-    private long lastTrainingTime = 0;
     /**
      *This method allows a Lutemon to train and gain experience. The user can only train once every hour.
      * Toast messages are used to inform the user about the training status in the MainActivity.
      * @param lutemon
-     * @throws InterruptedException
-     * @throws IllegalArgumentException
      */
-    public void train(Lutemon lutemon) throws InterruptedException {
-        long currentTime = System.currentTimeMillis();
-        long oneHour = 10000; // 1 hour in milliseconds
-        //Check if the one hour has passed since the last training
-        if (currentTime - lastTrainingTime < oneHour){
-            throw new InterruptedException("You can only train once every hour.");
-        }
-
-        try{
-            //train the lutemon for 1 second
-            Thread.sleep(10000);
-            lutemon.gainXP(10);
-            lastTrainingTime = System.currentTimeMillis();
-            lutemon.incrementTrainings();
-        }catch (InterruptedException e) {
-            throw new InterruptedException("Training interrupted." + e.getMessage());
-        }
+    public void train(Lutemon lutemon, Context context) {
+        lutemon.gainXP(10);
+        lutemon.incrementTrainings();
     }
 }
