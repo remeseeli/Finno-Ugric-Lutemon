@@ -60,7 +60,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/enterFightButton"
+            android:id="@+id/trainButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="#FF706B"
@@ -74,14 +74,14 @@
 
     <FrameLayout
         android:layout_width="390dp"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:background="@drawable/rounded_corner_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.37">
+        app:layout_constraintVertical_bias="0.19999999">
 
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
