@@ -17,15 +17,21 @@ public class Enemy {
         this.maxHealth = maxHealth;
     }
     public int attack(Lutemon player) {
+        int baseDamage = (this.attack + this.level) - player.defense; // the base damage scales with the levels progressed in the game
+        int randomFactor = (int)(Math.random() * 4); //This will give us a random extra damage between 0 and 3 (hopefully as well)
+        int damage = baseDamage + randomFactor;
+
+
         if(Math.random()<0.05)  {
             // Critical hit
-            return Math.max(1, this.attack * 2 - player.defense);
+            damage *= 2;
+
         }
-        else {
+
             // Normal hit
-            return Math.max(1, this.attack - player.defense);
-        }
+            return Math.max(1, damage);
     }
+
     public String getName() {
         return this.name;
     }

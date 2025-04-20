@@ -46,15 +46,19 @@ public abstract class Lutemon implements Serializable {
     // Lutemon's attack method, which calculates damage based on attack and enemy's defense.
     // Critical hit chance is testosterone in percents (1 = 1% chance).
     public int attack(Enemy enemy) {
+        int baseDamage = this.attack - enemy.defense;
+        int randomFactor = (int)(Math.random() * 5);  //This random factor will give us random extra damage between 0 and 4 (hopefully)
+        int damage = baseDamage + randomFactor;
+        //Critical hit
         if(Math.random() < getTestosterone() / 100.0)  {
-            // Critical hit
-            return Math.max(1, this.attack * 2 - enemy.defense);
+            damage *= 2;
+
         }
-        else {
-            // Normal hit
-            return Math.max(1, this.attack - enemy.defense);
-        }
+        // Normal hit
+        return Math.max(1, damage);
     }
+
+
     // Level up method, that allows for overflow of experience points for the next level.
     public void gainXP(int experience) {
         this.experience += experience;
