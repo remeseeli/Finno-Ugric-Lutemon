@@ -29,6 +29,7 @@ public abstract class Lutemon implements Serializable {
     private int numberOflosses = 0;
     private int numberOfBattles = 0;
     private int numberOfTrainings = 0;
+    public long lastTrainingTime =0 ; // This is used for the training cooldown, and is set to 0 when the lutemon is created
 
     public Lutemon(String name, String color, int attack, int defense, int testosterone, int experience, int level, int health, int maxHealth, int id) {
         // CONSTRUCTOR
@@ -86,6 +87,7 @@ public abstract class Lutemon implements Serializable {
     public int getNumberOfLosses() {return numberOflosses;}
     public int getNumberOfBattles() {return numberOfBattles;}
     public int getNumberOfTrainings() {return numberOfTrainings;}
+    public long getLastTrainingTime() {return lastTrainingTime;}
 
     //Setter methods for each variable
     public void setName(String name) {this.name = name;}
@@ -97,6 +99,7 @@ public abstract class Lutemon implements Serializable {
     public void setLevel(int level) {this.level = level;}
     public void setHealth(int health) {this.health = health;}
     public void setMaxHealth(int maxHealth) {this.maxHealth = maxHealth;}
+    public void setLastTrainingTime(long lastTrainingTime) {this.lastTrainingTime = lastTrainingTime;}
 
     //Setter methods for the statistics
     public void incrementWins() {this.numberOfwins++;}
