@@ -35,13 +35,19 @@ public class RecyclerActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    //Go to the StatisticActivity
+    /**
+     * Go to the StatisticActivity
+     * @param view
+     */
     public void goToStatisticActivity(View view) {
         Intent intent = new Intent(this, StatisticActivity.class);
         startActivity(intent);
     }
 
-    //Go to the MainActivity
+    /**
+     * Go to the MainActivity
+     * @param view
+     */
     public void goToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

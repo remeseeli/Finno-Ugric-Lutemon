@@ -35,7 +35,10 @@ public class StatisticActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    //Go to the MainActivity
+    /**
+     * Go to the MainActivity
+     * @param view
+     */
     public void goToLutemons(View view) {
         Intent intent = new Intent(this, RecyclerActivity.class);
         startActivity(intent);

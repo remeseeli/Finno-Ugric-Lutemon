@@ -22,10 +22,9 @@ import java.util.List;
 
 /**
  * Activity for training Lutemons.
- * @author Marton
  */
 public class TrainingActivity extends AppCompatActivity {
-    private Button testTrainButton;
+    private Button trainButton;
     private Spinner trainSpinner;
     private HashMap<Integer, Lutemon> lutemonMap;
 
@@ -34,8 +33,8 @@ public class TrainingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
-        testTrainButton = findViewById(R.id.trainButton);
         trainSpinner = findViewById(R.id.selectionSpinner);
+        trainButton = findViewById(R.id.trainButton);
 
         // Initialize the Storage instance and get the lutemon map
 
@@ -55,30 +54,39 @@ public class TrainingActivity extends AppCompatActivity {
     TrainingArea trainingArea = new TrainingArea();
     long lastTrainingTime = 0;
     /**
-     * Train the lutemon (still not fully implemented)
+     * Train the selected Lutemon with countdown timer
      * @param view
      */
     public void trainLutemon(View view){
 
         Lutemon selectedLutemon = (Lutemon) trainSpinner.getSelectedItem();
         if (selectedLutemon != null) {
-            //chech if the 1 hour has passed
+            //check if the 1 hour has passed
             long currentTime = System.currentTimeMillis();
             if (currentTime - lastTrainingTime < 3600000) { // 1 hour in milliseconds
                 Toast.makeText(this, "You can only train a Lutemon once every hour.", Toast.LENGTH_LONG).show();
                 return;
             }
+
+            //Disaple the train button
+            trainButton.setEnabled(false);
             new CountDownTimer(10000, 1000) { // 10 seconds, tick every 1 second
                 @Override
                 public void onTick(long millisUntilFinished) {
                     // Display the remaining time
-                    Toast.makeText(TrainingActivity.this, "Remaining time: " + millisUntilFinished / 1000 + " seconds", Toast.LENGTH_SHORT).show();
+                    trainButton.setText((millisUntilFinished / 1000) + " seconds remaining");
+
                 }
                 @Override
                 public void onFinish() {
                     // Training is complete
                     trainingArea.train(selectedLutemon, TrainingActivity.this);
                     //The training is finished, so we have to show a message somehow
+
+                    //Enable the train button
+                    trainButton.setEnabled(true);
+                    trainButton.setText("Train");
+                    Toast.makeText(TrainingActivity.this, selectedLutemon.getName() + "gained 10 experience points.", Toast.LENGTH_LONG).show();
                 }
             }.start();
             lastTrainingTime = System.currentTimeMillis(); // Update the last training time
@@ -87,10 +95,13 @@ public class TrainingActivity extends AppCompatActivity {
         }
     }
 
-    //Go to the main menu
+    /**
+     * Go to the Lutemon RecyclerActivity
+     * @param view
+     */
     public void goToMainMenu(View view) {
-        Intent intent = new Intent(this, MainActivity.class); // Replace MainMenuActivity with the actual class name of your main menu Activity
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        finish(); // Optional: Call finish() if you want to close the current Activity
+        finish();
     }
 }

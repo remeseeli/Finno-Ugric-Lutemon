@@ -1,5 +1,9 @@
 package com.palinka.finno_ugric_lutemon;
 
+/**
+ * Chromatic class represents a subclass of Lutemon.
+ * @see Lutemon
+ */
 public class Chromatic extends Lutemon {
     public Chromatic() {
         super("defaultChromatic", "Chromatic", 10, 10, 10, 0, 10, 10, 10, 10);

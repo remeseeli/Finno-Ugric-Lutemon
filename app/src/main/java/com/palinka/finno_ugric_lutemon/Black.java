@@ -1,5 +1,9 @@
 package com.palinka.finno_ugric_lutemon;
 
+/**
+ * Black class represenrs a subclass of Lutemon.
+ * @see Lutemon
+ */
 public class Black extends Lutemon {
 
     public Black() {
