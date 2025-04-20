@@ -70,9 +70,9 @@ public class Storage {
         int enemyLevel = Math.max(1, baseLevel + (int)(Math.random() * 2) - 1);
         // Enemy stats will scale according to their level Adjusting these stats will change the difficulty of the game
         // Attack, defense, and health are calculated based on the enemy level, and you can modify level scaling or the stat scaling here
-        int attack = 5 + (enemyLevel * 2);  // Attack scales with level
-        int defense = 3 + enemyLevel; // Defense scales slower
-        int health = 20 + (enemyLevel * 5); // More HP per level
+        int attack = 2 + (enemyLevel * 2);  // Attack scales with level
+        int defense = 2 + enemyLevel; // Defense scales slower
+        int health = 20 + (enemyLevel * 3); // More HP per level
         int maxHealth = health; // Max health is the same as current health for enemies
         return new Enemy("Enemy Lutémon", enemyLevel, attack, defense, health, maxHealth);
     }
