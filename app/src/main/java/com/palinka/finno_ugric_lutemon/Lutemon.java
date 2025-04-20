@@ -43,6 +43,7 @@ public abstract class Lutemon implements Serializable {
         this.health = health;
         this.maxHealth = maxHealth;
         this.id = id;
+        this.lastTrainingTime =0;
     }
     // Lutemon's attack method, which calculates damage based on attack and enemy's defense.
     // Critical hit chance is testosterone in percents (1 = 1% chance).

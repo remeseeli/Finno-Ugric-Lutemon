@@ -19,6 +19,7 @@ import com.palinka.finno_ugric_lutemon.TrainingArea;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import android.util.Log;
 
 /**
  * Activity for training Lutemons.
@@ -63,37 +64,33 @@ public class TrainingActivity extends AppCompatActivity {
             //check if the 5 sec has passed
             long currentTime = System.currentTimeMillis();
             long lastTrainingTime = selectedLutemon.getLastTrainingTime();
+            if (lastTrainingTime == 0 || currentTime - lastTrainingTime >= 5000) {
+                // Training is allowed
+                trainButton.setEnabled(false);
+                new CountDownTimer(10000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        trainButton.setText((millisUntilFinished / 1000) + " seconds remaining");
+                    }
 
-
-            if (currentTime - lastTrainingTime < 5000) { // 5 sec in milliseconds
-                Toast.makeText(this, "You can train " + selectedLutemon.getName() + " again in 5 seconds.", Toast.LENGTH_LONG).show();
-                return;
+                    @Override
+                    public void onFinish() {
+                        trainingArea.train(selectedLutemon, TrainingActivity.this);
+                        trainButton.setEnabled(true);
+                        trainButton.setText("Train");
+                        Toast.makeText(TrainingActivity.this, selectedLutemon.getName() + " gained 10 experience points.", Toast.LENGTH_LONG).show();
+                    }
+                }.start();
+                selectedLutemon.setLastTrainingTime(currentTime);
+                lutemonMap.put(selectedLutemon.getId(), selectedLutemon);
+            } else {
+                // Cooldown is still active
+                long secondsLeft = (5000 - (currentTime - lastTrainingTime)) / 1000;
+                Toast.makeText(this, "You can train " + selectedLutemon.getName() + " again in " + secondsLeft + " seconds.", Toast.LENGTH_LONG).show();
             }
-
-            //Disaple the train button
-            trainButton.setEnabled(false);
-            new CountDownTimer(10000, 1000) { // 10 seconds, tick every 1 second
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    // Display the remaining time
-                    trainButton.setText((millisUntilFinished / 1000) + " seconds remaining");
-
-                }
-                @Override
-                public void onFinish() {
-                    // Training is complete
-                    trainingArea.train(selectedLutemon, TrainingActivity.this);
-                    //The training is finished, so we have to show a message somehow
-
-                    //Enable the train button
-                    trainButton.setEnabled(true);
-                    trainButton.setText("Train");
-                    Toast.makeText(TrainingActivity.this, selectedLutemon.getName() + " gained 10 experience points.", Toast.LENGTH_LONG).show();
-                }
-            }.start();
-           selectedLutemon.setLastTrainingTime(currentTime);
-        }else {
-            Toast.makeText(this, "Please select a Lutemon to train.", Toast.LENGTH_LONG).show();
+        } else  {
+            // No Lutemon selected
+            Toast.makeText(this, "Please select a Lutemon to train.", Toast.LENGTH_SHORT).show();
         }
     }
 
