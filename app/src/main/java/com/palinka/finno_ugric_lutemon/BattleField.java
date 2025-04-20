@@ -7,7 +7,7 @@ public class BattleField {
         void onTurnUpdate(String log, int playerHP, int enemyHP);
         void onBattleEnd(String result);
     }
-    private static final long TURN_DELAY = 1000; // 2 seconds between turns
+    private static final long TURN_DELAY = 1000; // 1 second between turns (adjust to make battle faster/slower)
     public void fight(Lutemon player, Enemy enemy, BattleCallback callback) {
         boolean playerStarts = Math.random() < 0.5;
         boolean isPlayerTurn = playerStarts;
