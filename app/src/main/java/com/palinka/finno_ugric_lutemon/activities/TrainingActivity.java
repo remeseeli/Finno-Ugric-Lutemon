@@ -118,9 +118,8 @@ public class TrainingActivity extends AppCompatActivity {
                         Toast.makeText(TrainingActivity.this, selectedLutemon.getName() + " gained 10 experience points.", Toast.LENGTH_LONG).show();
                     }
                 }.start();
-                selectedLutemon.setLastTrainingTime(currentTime);
-                lutemonMap.put(selectedLutemon.getId(), selectedLutemon);
-            } else {
+                selectedLutemon.setLastTime(currentTime);
+            }else {
                 // Cooldown is still active
                 long secondsLeft = (5000 - (currentTime - lastTrainingTime)) / 1000;
                 Toast.makeText(this, "You can train " + selectedLutemon.getName() + " again in " + secondsLeft + " seconds.", Toast.LENGTH_LONG).show();
