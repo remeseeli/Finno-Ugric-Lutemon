@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +30,7 @@ public class TrainingActivity extends AppCompatActivity {
     private Button trainButton;
     private Spinner trainSpinner;
     private HashMap<Integer, Lutemon> lutemonMap;
+    private ImageView imageSpecificLutemon;
 
 
     @Override
@@ -36,6 +39,7 @@ public class TrainingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_training);
         trainSpinner = findViewById(R.id.selectionSpinner);
         trainButton = findViewById(R.id.trainButton);
+        imageSpecificLutemon = findViewById(R.id.imageSpecificLutemon);
 
         // Initialize the Storage instance and get the lutemon map
 
@@ -50,6 +54,39 @@ public class TrainingActivity extends AppCompatActivity {
 
         // Set the adapter to the Spinner
         trainSpinner.setAdapter(adapter);
+        trainSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Lutemon selectedLutemon = (Lutemon) parent.getItemAtPosition(position);
+
+                int imageRes = R.drawable.ic_launcher_foreground;
+                switch (selectedLutemon.getColor()) {
+                    case "Black":
+                        imageRes = R.drawable.black_train;
+                        break;
+                    case "White":
+                        imageRes = R.drawable.white_train;
+                        break;
+                    case "Green":
+                        imageRes = R.drawable.green_train;
+                        break;
+                    case "Pink":
+                        imageRes = R.drawable.pink_train;
+                        break;
+                    case "Orange":
+                        imageRes = R.drawable.orange_train;
+                        break;
+                }
+                imageSpecificLutemon.setImageResource(imageRes);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Optional: Set a default image or clear the ImageView
+                imageSpecificLutemon.setImageResource(R.drawable.ic_launcher_foreground);
+            }
+        });
+
     }
 
     TrainingArea trainingArea = new TrainingArea();

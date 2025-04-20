@@ -57,6 +57,26 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.Stat
         holder.textViewWins.setText(String.valueOf("Wins: " + lutemon.getNumberOfWins()));
         holder.textViewLosses.setText(String.valueOf("Losses: " + lutemon.getNumberOfLosses()));
         holder.textViewTrainings.setText(String.valueOf("Trainings: " + lutemon.getNumberOfTrainings()));
+        switch (lutemon.getColor().toLowerCase()) {
+            case "black":
+                holder.imageView.setImageResource(R.drawable.lutemon_black);
+                break;
+            case "green":
+                holder.imageView.setImageResource(R.drawable.lutemon_green);
+                break;
+            case "white":
+                holder.imageView.setImageResource(R.drawable.lutemon_white);
+                break;
+            case "orange":
+                holder.imageView.setImageResource(R.drawable.lutemon_orange);
+                break;
+            case "pink":
+                holder.imageView.setImageResource(R.drawable.lutemon_pink);
+                break;
+            default:
+                holder.imageView.setImageResource(R.drawable.ic_launcher_foreground); // fallback image
+                break;
+        }
     }
 
     @Override
