@@ -56,11 +56,31 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
 
         holder.textViewName.setText(lutemon.getName());
         holder.textViewColor.setText(lutemon.getColor());
-        holder.textViewLevel.setText("lvl: " + lutemon.getLevel());
+        holder.textViewLevel.setText("Lvl: " + lutemon.getLevel());
         holder.textViewMaxHealth.setText("HP: " + lutemon.getMaxHealth());
         holder.textViewTestosterone.setText("\uD83D\uDCAA: " + lutemon.getTestosterone());
         holder.textViewAttack.setText("Atk: " + lutemon.getAttack());
         holder.textViewDefense.setText("Def: " + lutemon.getDefense());
+        switch (lutemon.getColor().toLowerCase()) {
+            case "black":
+                holder.imageView.setImageResource(R.drawable.lutemon_black);
+                break;
+            case "green":
+                holder.imageView.setImageResource(R.drawable.lutemon_green);
+                break;
+            case "white":
+                holder.imageView.setImageResource(R.drawable.lutemon_white);
+                break;
+            case "orange":
+                holder.imageView.setImageResource(R.drawable.lutemon_orange);
+                break;
+            case "pink":
+                holder.imageView.setImageResource(R.drawable.lutemon_pink);
+                break;
+            default:
+                holder.imageView.setImageResource(R.drawable.ic_launcher_foreground); // fallback image
+                break;
+        }
 
 
     }
